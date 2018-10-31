@@ -13,14 +13,4 @@ public class Pet extends AnimateAccount
 	{
 		owner = person;
 	}
-
-	public void setFriends(ArrayList boList) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public void setMoments(ArrayList boMoments) {
-		// TODO Auto-generated method stub
-		
-	}
 }

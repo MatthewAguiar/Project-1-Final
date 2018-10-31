@@ -2,16 +2,10 @@
 import java.util.ArrayList;
 
 public class Utility
-{
-
-	public static void main(String[] args) 
+{	
+	public static float findSumOfList(ArrayList<Float> list)
 	{
-		
-	}
-	
-	public static double findSumOfList(ArrayList<Double> list)
-	{
-		double sum = 0;
+		float sum = 0;
 		for(int i = 0; i < list.size(); i++)
 		{
 			sum += list.get(i);
@@ -19,14 +13,14 @@ public class Utility
 		return sum;
 	}
 	
-	public static double findMeanOfList(ArrayList<Double> list)
+	public static float findMeanOfList(ArrayList<Float> list)
 	{
 		return findSumOfList(list) / list.size();
 	}
 	
-	public static ArrayList<Double> buildList(int size, double initValue)
+	public static ArrayList<Float> buildList(int size, float initValue)
 	{
-		ArrayList<Double> tmpIntList = new ArrayList();
+		ArrayList<Float> tmpIntList = new ArrayList<Float>();
 		for(int i = 0; i < size; i++)
 		{
 			tmpIntList.add(initValue);
@@ -34,9 +28,9 @@ public class Utility
 		return tmpIntList;
 	}
 	
-	public static double maxDoubleInList(ArrayList<Double> list)
+	public static float maxFloatInList(ArrayList<Float> list)
 	{
-		double max = 0;
+		float max = 0;
 		for(int i = 0; i < list.size(); i++)
 		{
 			if(max < list.get(i))

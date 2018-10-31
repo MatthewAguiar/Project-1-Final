@@ -10,13 +10,13 @@ import java.util.ArrayList;
  * If it does not, you may get a very low grade for your assignment.
  */
 public class FacebukPartialTester {
-	private Person _barack, _michelle, _kevin, _ina, _joe, _malia;
-	private Pet _bo, _sunny;
+	private Person _barack, _michelle, _kevin, _ina, _joe, _malia, _matthew, _andrew, _winnie, _kingsley, _lewis, _meg;
+	private Pet _bo, _sunny, _fido, _grey, _smokey, _xander;
 	private Moment _meAndBarack;
 	private ArrayList _michelleAndBarack, _michelleJoeBoAndMalia;
 
 	@Before
-	public void setUp () {
+	public void setUp() {
 		initPeople();
 		initPets();
 		initGroups();
@@ -31,6 +31,15 @@ public class FacebukPartialTester {
 		_ina = new Person("Ina", new Image("Ina.png"));
 		_joe = new Person("Joe", new Image("Joe.png"));
 		_malia = new Person("Malia", new Image("Malia.png"));
+		//
+		//Matthew and Winnie's Test Person Data!
+		//
+		_matthew = new Person("Matthew", new Image("Matthew.png"));
+		_andrew = new Person("Andrew", new Image("Andrew.png"));
+		_winnie = new Person("Winnie", new Image("Winnie.png"));
+		_kingsley = new Person("Kingsley", new Image("Kingsley.png"));
+		_lewis = new Person("Lewis", new Image("Lewis.png"));
+		_meg = new Person("Meg", new Image("Meg.png"));
 	}
 
 	private void initPets () {
@@ -39,6 +48,13 @@ public class FacebukPartialTester {
 
 		_bo.setOwner(_michelle);
 		_sunny.setOwner(_michelle);
+		
+		//Matthew and Winnie's Test Pet Data!
+		//
+		_fido = new Pet("Fido", new Image("Fido.png"));
+		_grey = new Pet("Grey", new Image("Grey.png"));
+		_smokey = new Pet("Smokey", new Image("Smokey.png"));
+		_xander = new Pet("Xander", new Image("Xander.png"));
 	}
 
 	private void initGroups () {
@@ -88,6 +104,98 @@ public class FacebukPartialTester {
 		boAndSunny.add(_bo);
 		boAndSunny.add(_sunny);
 		_michelle.setPets(boAndSunny);
+		
+		//Matt and Winnie's Groups.
+		_matthew.setFriends(new ArrayList<AnimateAccount>(){{
+			add(_andrew);
+			add(_winnie);
+			add(_grey);
+			add(_meg);
+			add(_kingsley);
+			add(_smokey);
+			}});
+		
+		_andrew.setFriends(new ArrayList<AnimateAccount>(){{
+			add(_matthew);
+			add(_fido);
+			add(_grey);
+			add(_lewis);
+			add(_meg);
+			add(_winnie);
+			add(_smokey);
+			add(_kingsley);
+			}});
+		
+		_winnie.setFriends(new ArrayList<AnimateAccount>(){{
+			add(_matthew);
+			add(_andrew);
+			add(_lewis);
+			add(_xander);
+			add(_meg);
+			add(_grey);
+			add(_smokey);
+			add(_kingsley);
+			}});
+		
+		_xander.setFriends(new ArrayList<AnimateAccount>(){{
+			add(_andrew);
+			}});
+		
+		_kingsley.setFriends(new ArrayList<AnimateAccount>(){{
+			add(_andrew);
+			add(_matthew);
+			add(_winnie);
+			add(_smokey);
+			add(_meg);
+			add(_kingsley);
+			add(_grey);
+			add(_lewis);
+			}});
+		
+		_lewis.setFriends(new ArrayList<AnimateAccount>(){{
+			add(_matthew);
+			add(_winnie);
+			}});
+		
+		_meg.setFriends(new ArrayList<AnimateAccount>(){{
+			add(_kingsley);
+			add(_smokey);
+			add(_matthew);
+			add(_grey);
+			add(_winnie);
+			add(_andrew);
+			add(_fido);
+			}});
+		
+		_fido.setFriends(new ArrayList<AnimateAccount>(){{
+			add(_matthew);
+			add(_lewis);
+			add(_grey);
+			}});
+		
+		_grey.setFriends(new ArrayList<AnimateAccount>(){{
+			add(_matthew);
+			add(_xander);
+			add(_meg);
+			add(_kingsley);
+			add(_lewis);
+			add(_andrew);
+			add(_winnie);
+			add(_smokey);
+			add(_grey);
+			}});
+		
+		_smokey.setFriends(new ArrayList<AnimateAccount>(){{
+			add(_matthew);
+			add(_meg);
+			add(_andrew);
+			add(_lewis);
+			add(_smokey);
+			add(_kingsley);
+			add(_grey);
+			add(_winnie);
+			}});
+		
 	}
 
 	private void initPossessions () {
@@ -96,6 +204,16 @@ public class FacebukPartialTester {
 		final ArrayList michellePossessions = new ArrayList();
 		michellePossessions.add(boxingBag);
 		_michelle.setPossessions(michellePossessions);
+		
+		
+		final Possession gameboy = new Possession("GameBoy Advance SP", new Image("GameBoy Advance SP.png"), 100.0f);
+		final Possession genesis = new Possession("SEGA Genesis", new Image("SEGA Genesis.png"), 500.0f);
+		gameboy.setOwner(_matthew);
+		genesis.setOwner(_matthew);
+		_matthew.setPossessions(new ArrayList<Possession>(){{
+			add(gameboy);
+			add(genesis);
+		}});
 	}
 
 	private void initMoments () {
@@ -134,6 +252,57 @@ public class FacebukPartialTester {
 		final ArrayList boMoments = new ArrayList();
 		boMoments.add(meJoeAndCo);
 		_bo.setMoments(boMoments);
+		
+		final ArrayList<Moment> winnieMoments = new ArrayList<Moment>();
+		final Moment vacation = new Moment("Vacation", new Image("Vacation.png"), _winnie.getFriends(), 
+				new ArrayList<Float>(){{
+					add(0.1f);
+					add(0.2f);
+					add(0.4f);
+					add(0.99f);
+					add(0.05f);
+					add(0.058f);
+					add(0.33f);
+					add(0.66f);
+				}}); //Corresponds with friends!
+		
+		final Moment basketball = new Moment("Basketball", new Image("Basketball.png"), _winnie.getFriends(), 
+				new ArrayList<Float>(){{
+					add(0.2f);
+					add(0.9f);
+					add(0.02f);
+					add(0.06f);
+					add(0.189f);
+					add(0.7f);
+					add(0.4f);
+					add(0.1f);
+				}}); //Corresponds with friends!
+		
+		final Moment pizza = new Moment("Pizza", new Image("Pizza.png"), _winnie.getFriends(), 
+				new ArrayList<Float>(){{
+					add(0.54f);
+					add(0.5f);
+					add(0.6f);
+					add(0.7f);
+					add(0.9f);
+					add(0.8f);
+					add(0.88f);
+					add(0.236f);
+				}}); //Corresponds with friends!
+		
+		winnieMoments.add(vacation);
+		winnieMoments.add(basketball);
+		winnieMoments.add(pizza);
+		_winnie.setMoments(winnieMoments);
+		
+		//Test for null.
+		
+		final Moment baseball = new Moment("Baseball", new Image("Baseball.png"), new ArrayList<AnimateAccount>(){{
+			add(_lewis);
+			}}, new ArrayList<Float>(){{
+				add(0.59f);
+				}});
+		
 	}
 
 	@Test
@@ -151,6 +320,16 @@ public class FacebukPartialTester {
 	@Test
 	public void testGetFriendWithWhomIAmHappiest () {
 		assertEquals(_michelle.getFriendWithWhomIAmHappiest(), _barack);
+	}
+	
+	@Test
+	public void testGetFriendWithWhomIAmHappiest2 () {
+		assertEquals(_winnie.getFriendWithWhomIAmHappiest(), _xander);
+	}
+	
+	@Test (expected = NullPointerException.class)
+	public void testGetFriendWithWhomIAmHappiest3 () {
+		assertEquals(_matthew.getFriendWithWhomIAmHappiest(), null);
 	}
 
 	@Test
@@ -203,14 +382,50 @@ public class FacebukPartialTester {
     	//Returns an updated list of friends for both person1 and pet1
     	friendRequest.approve(person1);
     }
-	
-
-	// TODO: write more methods to test addFriend
-	// TODO: write more methods to test approve
-	
-	// TODO: write more methods to test getFriendWithWhomIAmHappiest 
-	// TODO: write more methods to test getOverallHappiestMoment 
-	
-	// TODO: write methods to test isClique 
-	// TODO: write methods to test findMaximumCliqueOfFriends
+    
+    @Test
+	public void testgetOverallHappiestMoment() 
+    {
+    	assertEquals(_winnie.getOverallHappiestMoment(), _winnie.getMoments().get(2)); //_winnie.getMoments().get(2) is pizza!
+	}
+    
+    @Test
+	public void testAddFriend () 
+    {
+    	_matthew.addFriend(_lewis);
+	}
+    
+    @Test 
+    public void testIsClique1()
+    {    	
+    	if(!AnimateAccount.isClique(new ArrayList<AnimateAccount>()))
+    	{
+    		throw new java.lang.RuntimeException("Not Clique");
+    	}
+    }
+    
+    @Test 
+    public void testIsClique2()
+    {    	
+    	if(!AnimateAccount.isClique(new ArrayList<AnimateAccount>(){{
+    		add(_matthew.getFriends().get(0));
+    	}}))
+    	{
+    		throw new java.lang.RuntimeException("Not Clique");
+    	}
+    }
+    
+    @Test (expected = java.lang.RuntimeException.class)
+    public void testIsClique3()
+    {    	
+    	if(!AnimateAccount.isClique(new ArrayList<AnimateAccount>(){{
+    		add(_smokey.getFriends().get(0)); // Matthew
+    		add(_smokey.getFriends().get(7)); // Winnie
+    		add(_smokey.getFriends().get(3)); // Lewis
+    	}}))
+    	{
+    		throw new java.lang.RuntimeException("Not Clique");
+    	}
+    }
+    
 }

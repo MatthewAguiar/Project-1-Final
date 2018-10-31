@@ -2,9 +2,9 @@
 public class Possession extends Account
 {
 	private Person owner;
-	private double price;
+	private float price;
 	
-	public Possession(String name, Image image, double price)
+	public Possession(String name, Image image, float price)
 	{
 		super(name, image);
 		this.price = price;
@@ -15,7 +15,7 @@ public class Possession extends Account
 		this.owner = owner;
 	}
 	
-	public double getPrice()
+	public float getPrice()
 	{
 		return price;
 	}

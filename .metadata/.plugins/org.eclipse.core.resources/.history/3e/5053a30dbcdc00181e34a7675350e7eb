@@ -1,0 +1,33 @@
+
+public abstract class Account
+{
+	private Identity identity; //Creates a composition with an identity objct. 
+	
+	public Account(String name, Image image)
+	{
+		/*
+		 * CONSTRUCTOR
+		 * Signature: String Image -> Invokes new Account object through a subclass.
+		 * Purpose: 
+		 */
+		identity = new Identity(name, image); //Composition.
+	}
+	
+	public Identity getIdentity()
+	{
+		return identity;
+	}
+	
+	public boolean equals(Object object)
+	{
+		Account account = (Account)object;
+		if(identity.name.equals(account.getIdentity().name))
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+}

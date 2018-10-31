@@ -3,9 +3,9 @@ import java.util.ArrayList;
 public class Moment extends Account 
 {
 	private ArrayList<AnimateAccount> participants;
-	private ArrayList<Double> smileValues;
+	private ArrayList<Float> smileValues;
 	
-	public Moment(String name, Image image, ArrayList<AnimateAccount> participants, ArrayList<Double> smileValues)
+	public Moment(String name, Image image, ArrayList<AnimateAccount> participants, ArrayList<Float> smileValues)
 	{
 		super(name, image);
 		this.participants = participants;
@@ -17,7 +17,7 @@ public class Moment extends Account
 		return participants;
 	}
 	
-	public ArrayList<Double> getSmileValues()
+	public ArrayList<Float> getSmileValues()
 	{
 		return smileValues;
 	}
