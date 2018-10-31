@@ -10,7 +10,7 @@ public class Possession extends Account
 		this.price = price;
 	}
 	
-	public void setOwner(Person owner)
+	public void setOwner(AnimateAccount owner)
 	{
 		this.owner = owner;
 	}

@@ -10,11 +10,6 @@ public class Possession extends Account
 		this.price = price;
 	}
 	
-	public void setOwner(Person owner)
-	{
-		this.owner = owner;
-	}
-	
 	public double getPrice()
 	{
 		return price;
